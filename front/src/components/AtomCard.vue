@@ -1,71 +1,30 @@
-{"atomeList":[{"id":1,"nom":"Azote","abbreviation":"N2"},{"id":2,"nom":"Oxygène","abbreviation":"O2"},{"id":3,"nom":"Hydrogène","abbreviation":"H"}]}
-
 <template>
-  <v-card class="mx-auto" max-width="500">
-    <v-system-bar color="indigo darken-2" dark>
-      <v-spacer></v-spacer>
+  <div class="card col-3" style="width: 18rem">
+    Atomic Number<p class="primary">{{this.atomNumber}}</p>
 
-      <v-icon>mdi-window-minimize</v-icon>
-
-      <v-icon>mdi-window-maximize</v-icon>
-
-      <v-icon>mdi-close</v-icon>
-    </v-system-bar>
-
-    <v-toolbar color="indigo" dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Discover</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-toolbar>
-
-    <v-container fluid>
-      <v-row dense>
-        <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+    <div class="card-body">
+      <div class="bg-primary">
+<h5 class="card-title">Symbol{{this.symbol}}</h5>
+      </div>
+      
+      <p class="card-text">
+        Quick description if possible
+      </p>
+      <hr />
+      <p>Atomic mass</p>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  data: {
-      symbol: '',
-      atomNumber:'',
-      atomicMass:''
+  name: "AtomCard",
+  data: function () {
+    return {
+      symbol: "",
+      atomNumber: "",
+      atomicMass: "",
+    };
   },
-  
 };
 </script>
